@@ -10,7 +10,7 @@ var dirMemory = springDirection
 var typeMemory = type
 var speed = [10,16]
 
-var springTextures = [preload("res://Graphics/Gimmicks/springs_yellow.png"),preload("res://Graphics/Gimmicks/springs_red.png")]
+var springTextures = [preload("res://Graphics/Gimmicks/yellow_springs.png"),preload("res://Graphics/Gimmicks/red_springs.png")]
 
 @export var springSound = preload("res://Audio/SFX/Gimmicks/Springs.wav")
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5gihdypfr245"
-path="res://.godot/imported/bounds.png-c47f601f75d0147ffdf2b62cb0ae3fae.ctex"
+uid="uid://bybd1a3xqdn8g"
+path="res://.godot/imported/moniters_new.png-29ee671cd62651aaf24912ee959b2efb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bounds.png"
-dest_files=["res://.godot/imported/bounds.png-c47f601f75d0147ffdf2b62cb0ae3fae.ctex"]
+source_file="res://Graphics/Items/moniters_new.png"
+dest_files=["res://.godot/imported/moniters_new.png-29ee671cd62651aaf24912ee959b2efb.ctex"]
 
 [params]
 
