@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://cylnnjmewlf3t"
+path="res://.godot/imported/mania_small.fnt-9a1a097f71c6c854d60a32f3137fb857.fontdata"
+
+[deps]
+
+source_file="res://Graphics/Fonts/mania_small.fnt"
+dest_files=["res://.godot/imported/mania_small.fnt-9a1a097f71c6c854d60a32f3137fb857.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=0

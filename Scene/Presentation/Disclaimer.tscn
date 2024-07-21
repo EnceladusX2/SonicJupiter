@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://bccgg1keiahef"]
+
+[ext_resource type="Script" path="res://Scripts/Level/Disclaimer.gd" id="1_wgawa"]
+[ext_resource type="FontFile" uid="uid://cylnnjmewlf3t" path="res://Graphics/Fonts/mania_small.fnt" id="2_neadj"]
+[ext_resource type="AudioStream" uid="uid://15xaev35gfhq" path="res://Audio/SFX/Misc/MenuDisc.wav" id="3_2ru5l"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_20tpj"]
+
+[sub_resource type="Animation" id="Animation_uq7k8"]
+resource_name = "Fade"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CoverLayer/Cover:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hia2h"]
+_data = {
+"Fade": SubResource("Animation_uq7k8")
+}
+
+[node name="Disclaimer" type="Node2D"]
+script = ExtResource("1_wgawa")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Back" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="DisclaimerText" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -77.5
+offset_right = 124.0
+offset_bottom = 77.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("2_neadj")
+bbcode_enabled = true
+text = "[center]DISCLAIMER
+
+[color=e9de6a][wave amp=20.0 freq=6.0]Sonic Jupiter[/wave][/color] is a fan project created without the involvement of [color=17569b]SEGA[/color] or [color=17569b]Sonic Team[/color].
+
+Any attempts to present this product as an offical game are [shake rate=15.0 level=1][color=EF6058]illegitimate[/color][/shake].[/center]"
+scroll_active = false
+shortcut_keys_enabled = false
+
+[node name="CoverLayer" type="CanvasLayer" parent="."]
+
+[node name="Cover" type="ColorRect" parent="CoverLayer"]
+material = SubResource("CanvasItemMaterial_20tpj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hia2h")
+}
+
+[node name="MenuDisc" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2ru5l")
+bus = &"SFX"

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bb2wkew1yo0cv"]
+
+[ext_resource type="Script" path="res://Scripts/Gimmicks/BridgeNew.gd" id="1_vmmde"]
+[ext_resource type="Script" path="res://Scripts/Gimmicks/BridgeChild.gd" id="2_psbqn"]
+[ext_resource type="Texture2D" uid="uid://nko5dxiqulro" path="res://Graphics/Gimmicks/bridge_log.png" id="2_rb3qq"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(16, 16)
+
+[node name="Bridge" type="Node2D"]
+process_priority = 10
+script = ExtResource("1_vmmde")
+
+[node name="Bridge" type="CharacterBody2D" parent="."]
+process_priority = 10
+collision_layer = 8193
+collision_mask = 8193
+script = ExtResource("2_psbqn")
+
+[node name="mask" type="CollisionShape2D" parent="Bridge"]
+position = Vector2(-8, 0)
+shape = SubResource("1")
+one_way_collision = true
+
+[node name="log" type="Sprite2D" parent="."]
+texture = ExtResource("2_rb3qq")

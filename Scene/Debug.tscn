@@ -1,0 +1,82 @@
+[gd_scene load_steps=3 format=3 uid="uid://45ij43breid5"]
+
+[sub_resource type="GDScript" id="GDScript_vg354"]
+script/source = "extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	if (Input.is_action_just_pressed(\"show_debug_overlay\") and $DebugLayer/DebugMenu.visible == false and Global.players.size() > 0):
+		$DebugLayer/DebugMenu.visible = true
+	elif  (Input.is_action_just_pressed(\"show_debug_overlay\") and $DebugLayer/DebugMenu.visible == true and Global.players.size() > 0):
+		$DebugLayer/DebugMenu.visible = false
+
+	if $DebugLayer/DebugMenu.visible == true:
+		debug_overlay()
+
+func debug_overlay() -> void:
+	var player = null
+	if (Global.players.size() > 0):
+		player = Global.players[0]
+
+	# Speed Values
+	$DebugLayer/DebugMenu/Labels/GeneralLabel.text = \"Player Angle: \" + str(player.sprite.rotation)
+"
+
+[sub_resource type="SystemFont" id="SystemFont_emnfd"]
+font_names = PackedStringArray("MS UI Gothic")
+
+[node name="Debug" type="Node"]
+script = SubResource("GDScript_vg354")
+
+[node name="DebugLayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="DebugMenu" type="Control" parent="DebugLayer"]
+visible = false
+layout_mode = 3
+anchor_right = 0.197
+anchor_bottom = 1.0
+offset_right = -0.316002
+grow_vertical = 2
+
+[node name="Background" type="Control" parent="DebugLayer/DebugMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="DebugLayer/DebugMenu/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.333333)
+
+[node name="Labels" type="Control" parent="DebugLayer/DebugMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GeneralLabel" type="Label" parent="DebugLayer/DebugMenu/Labels"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_emnfd")
+theme_override_font_sizes/font_size = 12
+text = "asdawasdwa"

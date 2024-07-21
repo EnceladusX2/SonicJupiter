@@ -1,0 +1,22 @@
+[remap]
+
+importer="font_data_image"
+type="FontFile"
+uid="uid://bixqwotshet68"
+path="res://.godot/imported/hud_numbers.png-6c502d51b751fcbd6f998438749735a6.fontdata"
+
+[deps]
+
+source_file="res://Graphics/HUD/hud_numbers.png"
+dest_files=["res://.godot/imported/hud_numbers.png-6c502d51b751fcbd6f998438749735a6.fontdata"]
+
+[params]
+
+character_ranges=PackedStringArray("48-57", "32")
+columns=11
+rows=1
+image_margin=Rect2i(0, 0, 0, 0)
+character_margin=Rect2i(0, 0, 0, 0)
+fallbacks=[]
+compress=true
+scaling_mode=0
